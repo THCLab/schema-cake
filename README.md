@@ -103,16 +103,6 @@ Can resolves to:
     {
       @context: ["https://schema-and-overlays.io/schema/v1"]
       "id": did:sov:12345xcvb
-      "proof": {
-        "type": "LinkedDataSignature2015",
-        "created": "2016-02-08T16:02:20Z",
-        "creator": "did:example:8uQhQMGzWxR8vw5P3UWH1ja#keys-1",
-        "signatureValue": "QNB13Y7Q9...1tzjn4w=="
-      }
-      "authentication": [{
-        "type": "RsaSignatureAuthentication2018",
-        "publicKey": "did:example:123456789abcdefghi#keys-1"
-      }
       name: "Full Name",
       description: "Person full name",
       version: "1.0",
