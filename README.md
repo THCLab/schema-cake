@@ -94,13 +94,13 @@ The idea would be to use dedicated context for defining schema related objects t
 
 Example:
 
-    did-sch:sov:12345xcvb # Specific Schema Base Object DID
+    did:sov:12345xcvb # Specific Schema Base Object DID
 
 Can resolves to:
 
     {
       @context: ["https://schema-and-overlays.io/schema/v1"]
-      "id": did-schema:sov:12345xcvb
+      "id": did:sov:12345xcvb
       "proof": {
         "type": "LinkedDataSignature2015",
         "created": "2016-02-08T16:02:20Z",
@@ -115,19 +115,25 @@ Can resolves to:
       description: "Person full name",
       version: "1.0",
       attr_names: {
-        "first_name": did-schema-element:sov:9667,
-        "middle_name": did-schema-element:sov:9668,
-        "last_name": did-schema-element:sov:9669,
+        "first_name": did:sov:9667,
+        "middle_name": did:sov:9668,
+        "last_name": did:sov:9669,
       }
     }
 
 Example:
 
-    did-ove:sov:1234qwer123123123
+    did:sov:1234qwer123123123
 
 Can resolves to:
 
 TODO:
+
+
+### DID Types
+
+Using DID types to distinquish between did types by using dedicated schema type.
+See more in DIDSpec2.0.md document.
 
 
 ## Schema Element
