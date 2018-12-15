@@ -74,7 +74,7 @@ TOOD: challenge - how to make sure that the reputation would be valid across dif
 Allow to define overlay with simple logic to be able to apply specific predicate on any attributes.
 For example:
 * Are you above 18 years old? -> ( "birthdate" > 18y )
-* Are you leaving in Poland? -> ( "address" include? 'Poland' )
+* Are you living in Poland? -> ( "address" include? 'Poland' )
 * Are you citizen of Poland? -> ( "pesel" is present - PESEL is a national ID of each citizen )
 
 This could be related with the work which is done in Verifiable Credential WG where ZKP allows you execute such operation. Multiple attributes can answer different questions, overlay could define what type of questions are supported against specific attributes. The query could be defined using ZKLang.
