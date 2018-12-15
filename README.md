@@ -167,7 +167,7 @@ Example of one element:
     }
 ```
 
-## Schema base
+## Schema Base
 ```
     {
       did: "did-schema:sov:66789",
@@ -491,12 +491,3 @@ CONSENT_RECIEPT_OVERLAY = {
 * How schema could be tied to specific DID?
 
   DID - identity could point out that he is using those specific schema for different purpose. So if someone want to communicate with him for example ask for data for issuing him an invoice he could always get the right schema. It could be done via DDOC itself or services within DDOC.
-
-
-# TODO
-
-Since we are operating on DID we can use DDOC to store meta information about object within DDOC. The important part is that DDOC can changed so we need to keep that in mind and somehow record specific version of the DDOC to make sure that it won't changed in the future. Since in most network implementation DDOC is stored on the DL this won't be a problem but we need to keep that in mind.
-
-# Identity Request
-
-How to make sure that the identity request from the Bank won't changed on the way to the customer.
