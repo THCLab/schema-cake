@@ -115,11 +115,20 @@ Can resolves to:
 
 Example:
 
+    Subset overlay:
     did:sov:1234qwer123123123
 
 Can resolves to:
 
-TODO:
+
+```
+    {
+      @context: ["https://schema-and-overlays.io/overlay/v1"]
+      "id": did:sov:123cavvbs
+      attr_names: [ "first_name", "middle_name", "last_name" ]
+
+    }
+```
 
 
 ### DID Types
