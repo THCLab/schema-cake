@@ -41,6 +41,7 @@ The schema base can:
 * reference other schema base objects
 * be included in other schema base objects
 * use universal "standardize" atomic attributes
+* be searchable
 * ...
 
 The schema base must:
@@ -54,6 +55,7 @@ The Overlay can:
 * be attached to the schema
 * be apply on top of specific (if it is referenced or any schema)
 * be applied by issuer or receiver
+* be searchable
 
 The Overlay must:
 * have be identify by DID (or any unique identifier)
@@ -234,12 +236,13 @@ Example of overlays:
  - Entry Overlay
  - Label Overlay
  - Information Overlay
- - Subset Overlay
- - Sensitive Overlay
  - Encoding Overlay
  - Format Overlay (including units)
- - Conditional Overlay
- - Consent Overlay
+ - Source Overlay
+ - Subset Overlay
+
+ - Sensitive Overlay (filter not attached to schema base)
+ - Conditional Overlay (filter on UI)
 
 ### Entry overlay
 
