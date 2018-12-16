@@ -188,7 +188,7 @@ Example of one element:
       version: "1.0",
       consent: "did:schema:27312381238123", # reference to consent schema
 
-      bit_attributes: {
+      pii_attributes: {
         "brthd": "sensitive"
       }
       attr_names: {
