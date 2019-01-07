@@ -122,7 +122,7 @@ Can resolves to:
 ### DID Types
 
 Using DID types to distinquish between did types by using dedicated schema type.
-See more in DIDSpec2.0.md document.
+See more in [DIDSpec2.0.md](DIDSpec2.0.md) document.
 
 
 ## Schema Element
