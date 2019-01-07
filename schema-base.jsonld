@@ -1,7 +1,7 @@
 {
   "@context": {
-     "thc": "https://thclab.online/ontology/",
-  }
+     "thc": "https://thclab.online/ontology/"
+  },
   "@graph": [
     {
       "@id": "consent",
@@ -36,7 +36,7 @@
     {
       "@id": "attributes",
       "@type": "rdf:Property",
-      "rdfs:comment": "The list of attributes and their URI"
+      "rdfs:comment": "The list of attributes and their URI",
       "rdfs:label": "attributes"
     }
   ]
