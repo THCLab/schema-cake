@@ -1,0 +1,144 @@
+{
+  "@context": {
+     "thc": "https://thclab.online/ontology/",
+     "sb": "https://thclab.online/ontology/schema_base/"
+  },
+  "@graph": [
+    {
+      "@id": "dri",
+      "@type": "thc:dri"
+    },
+    {
+      "@id": "schemaVersion",
+      "@type": "sb:version"
+    },
+    {
+      "@id": "schemaName",
+      "@type": "sb:name"
+    },
+    {
+      "@id": "schemaDescription",
+      "@type": "sb:description"
+    },
+    {
+      "@id": "sb:expiration",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Date until when consent is valid",
+      "rdfs:label": "expiration"
+    },
+    {
+      "@id": "sb:limitation",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Period of data storage post consent expiration",
+      "rdfs:label": "limitation"
+    },
+    {
+      "@id": "sb:collectionFrequency",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Data collection frequency",
+      "rdfs:label": "collectionFrequency"
+    },
+    {
+      "@id": "sb:validityTtl",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Validity period of the consent request",
+      "rdfs:label": "validityTtl"
+    },
+    {
+      "@id": "sb:dictatedBy",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Dictator of the consent terms",
+      "rdfs:label": "dictatedBy"
+    },
+    {
+      "@id": "sb:singleUse",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The data is shared only for the purpose of completing the interaction at hand. The recipient agrees to delete it as soon as this interaction completes.",
+      "rdfs:label": "singleUse"
+    },
+    {
+      "@id": "sb:restrictedTime",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The data is shared for a limited amount of time, after which it must be deleted or reauthorized.",
+      "rdfs:label": "restrictedTime"
+    },
+    {
+      "@id": "sb:ongoingUse",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The data is shared for repeated use bu the recipient, with no end date or end conditions. However",
+      "rdfs:label": "ongoingUse"
+    },
+    {
+      "@id": "sb:refresh",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Used in conjunction with Restricted-Time or OngoingUse. The data subject wants to guarantee that information doesn't become stale.",
+      "rdfs:label": "refresh"
+    },
+    {
+      "@id": "sb:noShare",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The data may not be shared with any third parties, unless enumerated in an associated list.",
+      "rdfs:label": "onShare"
+    },
+    {
+      "@id": "sb:shareIntroduce",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The controller may be able to share the data, but only through an introduction in which the data sharing terms and conditions are negotiated with the data subject.",
+      "rdfs:label": "shareIntroduce"
+    },
+    {
+      "@id": "sb:shareFree",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The controller may share the data, but cannot charge any money for the data or for data sets of which this data is a member",
+      "rdfs:label": "shareFree"
+    },
+    {
+      "@id": "sb:shareAlike",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The controller may share the data, but must offer the data owner a free copy of all data in the set(s) of which this data is a member. Like GPL",
+      "rdfs:label": "shareFree"
+    },
+    {
+      "@id": "sb:noAggregation",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The data may not be combined into a larger data set (e.g. to analyze for statistical or research purposes).",
+      "rdfs:label": "shareFree"
+    },
+    {
+      "@id": "sb:personalUseOnly",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The data is being given to a natural person, and may only be used by a natural person.",
+      "rdfs:label": "personalUseOnly"
+    },
+    {
+      "@id": "sb:noLeaveGeo",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The data must not leave the specified goe(s) when it's at rest.",
+      "rdfs:label": "noLeaveGeo"
+    },
+    {
+      "@id": "sb:noLeaveJurisdiction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The data must not leave the specified legal jurisdiction(s) when it’s at rest.",
+      "rdfs:label": "noLeaveJurisdiction"
+    },
+    {
+      "@id": "sb:noCorrelate",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The receiver of data must treat the data subject as an entirely new person, never encountered before, and is not allowed to make an effort to correlate the data to other data they may have about natural persons.",
+      "rdfs:label": "noCorrelate"
+    },
+    {
+      "@id": "sb:usePseudonymize",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The data can be used in a form that hides obvious identifying details. This proviso should be accompanied by a reference to specific pseudonymization algorithm(s) that are acceptable.",
+      "rdfs:label": "usePseudonymize"
+    },
+    {
+      "@id": "sb:sharePseudonymize",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The data can be shared if it meets the pseudonymization requirements embodied in the specified algorithm(s).",
+      "rdfs:label": "sharePseudonymize"
+    }
+  ]
+}
