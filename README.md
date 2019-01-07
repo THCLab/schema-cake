@@ -5,14 +5,22 @@ DRAFT - Work in Progress
 ## Intro
 
 This document aims to provide proposition of solution for global standardize
-way of data exchange.  The idea is to design minimalistic base schema for data
-which could be used in very generic way and leverage concept of overlays to
-provide additional extensions and functionality.
+way of data exchange base on concept of Linked Data. The idea is to design
+minimalistic base schema for data which could be used in very generic way and
+leverage concept of overlays to provide additional extensions and
+functionality.
 
-The idea is that schema base and overlays would be identify by DID and would be
-stored in immutable way, e.g. storing them on Distributed Ledger which
-introduce additional security and trust into the system. By composing
-(merging) schema base and overlays, schema is created.
+The idea is that schema base and overlays would be identify by decentralize
+identifier. It could be [DID](https://w3c-ccg.github.io/did-spec/) if final
+version would allow for referencing any kind of content. Or we would find
+another solution like DRI (Decenralize Resource Identifier) which would have
+much wider definition then current DID.
+
+The main reason behind having decentralize identifier is to attach few
+attributes to the objects which we are talking about:
+- immutability
+- interoberability
+- decentralization
 
 NOTICE: Schema base is not the same as schema, schema is created only by
 composing schema base with overlays.
@@ -23,8 +31,7 @@ Objects:
 * OVERLAY OBJECT - overlay definition
 * SCHEMA ELEMENT OBJECT - attribute definition
 
-
-## What for schema could be useful?
+## What for schema-cake could be useful?
 
 * Verifiable Credentials (Presentation, Presentation Request, Canonicalization Function, Encoding, Schema)
 * Data Vault - unify way to exchange, share and store data.
@@ -45,45 +52,26 @@ The schema base can:
 * ...
 
 The schema base must:
-* be identify by decentralize unique identifier (WIP: See DID Schema Document)
+* be identify by decentralize unique identifier
 * have a version
 * have a name
 * must include consent receipt schema
+* be valid JSON-LD document
 * ...
 
 The Overlay can:
 * be attached to the schema
-* be apply on top of specific (if it is referenced or any schema)
+* be apply on top of chosen schema (if is not tied to specific schema)
 * be applied by issuer or receiver
 * be searchable
 
 The Overlay must:
-* have be identify by DID (or any unique identifier)
-* be valid schema (defined by JSON Schema)
+* be identify by decentralize unique identifier
+* be valid JSON-LD document
 
 
-
-## Reputation
-
-We should think of how to be able to track popularity of the schema, overlays and schema elements to measure it's reputation. So community can build up overall "standards". Probably this would be tracked via resolution where network can measure the amount of hits to specific schema or overlay. Reputation should be build outside the schema and overlay. Probably as a external system. Reputation system would be very important in the process to establish overall data normalization and unify communication language.
-
-TOOD: challenge - how to make sure that the reputation would be valid across different network?
-
-## Predicate conditions
-
-Allow to define overlay with simple logic to be able to apply specific predicate on any attributes.
-For example:
-* Are you above 18 years old? -> ( "birthdate" > 18y )
-* Are you living in Poland? -> ( "address" include? 'Poland' )
-* Are you citizen of Poland? -> ( "pesel" is present - PESEL is a national ID of each citizen )
-
-This could be related with the work which is done in Verifiable Credential WG where ZKP allows you execute such operation. Multiple attributes can answer different questions, overlay could define what type of questions are supported against specific attributes. The query could be defined using ZKLang.
 
 ## DID and DDOC vs DIDv2.0
-
-To uniquely identify schema base or overlay we would like to try to leverage concept of DID.
-
-There are currently two versions how this could be achieve.
 
 ### Context
 According to the [latest spec](https://w3c-ccg.github.io/did-spec/)(v0.11) we could use new context withing DID spec. Keep in mind that is not adding new context to the DID Doc but replacing current one and defining context for schema base and overlays.
@@ -140,7 +128,7 @@ See more in DIDSpec2.0.md document.
 ## Schema Element
 
 Schema Element represent smallest unit in schema world which is single
-attribute. Schema element's are included in schema. The idea behind schema elements is to avoid duplicates on data storage side (for example decentralize global storage or Sovrin agent) and provide universal language (semantic) for SSI ecosystem to talk between networks and data providers so we could keep compatibility between them.
+attribute. Schema element's are included in schema base. The idea behind schema elements is to avoid duplicates on data storage side (for example decentralize global storage or Sovrin agent) and provide universal language (semantic) for SSI ecosystem to talk between networks and data providers so we could keep compatibility between them.
 
 Example of one element:
 
@@ -468,6 +456,24 @@ CONSENT_RECIEPT_OVERLAY = {
 
 ```
 
+## Reputation
+
+We should think of how to be able to track popularity of the schema, overlays and schema elements to measure it's reputation. So community can build up overall "standards". Probably this would be tracked via resolution where network can measure the amount of hits to specific schema or overlay. Reputation should be build outside the schema and overlay. Probably as a external system. Reputation system would be very important in the process to establish overall data normalization and unify communication language.
+
+TOOD: challenge - how to make sure that the reputation would be valid across different network?
+
+If we would use IPFS for storing schema and overlays we could measure reputation base on the popularity of the file - referencess on the network/pin objects.
+
+## Predicate conditions
+
+Allow to define overlay with simple logic to be able to apply specific predicate on any attributes.
+For example:
+* Are you above 18 years old? -> ( "birthdate" > 18y )
+* Are you living in Poland? -> ( "address" include? 'Poland' )
+* Are you citizen of Poland? -> ( "pesel" is present - PESEL is a national ID of each citizen )
+
+This could be related with the work which is done in Verifiable Credential WG where ZKP allows you execute such operation. Multiple attributes can answer different questions, overlay could define what type of questions are supported against specific attributes. The query could be defined using ZKLang.
+
 ## TODO
 * Overlay for Canonicalization Function - contains ordered graph-paths?
 * Conversions?
@@ -491,3 +497,12 @@ CONSENT_RECIEPT_OVERLAY = {
 * How schema could be tied to specific DID?
 
   DID - identity could point out that he is using those specific schema for different purpose. So if someone want to communicate with him for example ask for data for issuing him an invoice he could always get the right schema. It could be done via DDOC itself or services within DDOC.
+
+
+
+* Fingerprint of the data
+
+Generate fingerprint of the data to be able to track who is using the data and if the consent is present.
+
+Maybe in a form of merkel tree where we combine the attributes and as soon as we will notice a pattern within the system we can set an alert.
+

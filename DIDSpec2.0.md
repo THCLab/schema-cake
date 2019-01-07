@@ -1,6 +1,6 @@
 # DID Spec "2.0"
 
-Idea to use DID concept in much brother way then is it right now defined in https://w3c-ccg.github.io/did-spec/
+Idea to use DID concept in much broader way then is it right now defined in https://w3c-ccg.github.io/did-spec/
 
 The idea is to define DID as a global decentralize identifier which can be resolove to different types of DID, to name few:
 
