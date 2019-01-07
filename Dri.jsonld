@@ -1,0 +1,17 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "didv": "https://w3id.org/did#",
+
+  }
+  "@graph": [
+    {
+      "dri": {
+        "@id": "didv:field",
+        "@type": "@id",
+        "rdfs:comment": "Decentralize resource identifier (DRI) which is Unique global identifier which currently is represent by DID but we don't know yet if we can use it as a unit of language. See spec."
+        "rdfs:label": "dri"
+      }
+    }
+  ]
+}

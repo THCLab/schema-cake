@@ -1,7 +1,7 @@
 {
   "@context": {
      "thc": "https://thclab.online/ontology/",
-     "sb": "https://thclab.online/ontology/schema_base/"
+     "sb": "https://thclab.online/ontology/schema_base"
   },
   "@graph": [
     {

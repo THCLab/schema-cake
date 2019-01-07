@@ -1,0 +1,43 @@
+{
+  "@context": {
+     "thc": "https://thclab.online/ontology/",
+  }
+  "@graph": [
+    {
+      "@id": "consent",
+      "schema:rangeIncludes": {
+        "@id": "thc:Consent"
+      }
+    },
+    {
+      "@id": "dri",
+      "schema:rangeIncludes": {
+        "@id": "thc:Dri"
+      }
+    },
+    {
+      "@id": "name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Schema base name",
+      "rdfs:label": "name"
+    },
+    {
+      "@id": "description",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Schema base description",
+      "rdfs:label": "description"
+    },
+    {
+      "@id": "version",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Schema base spec version",
+      "rdfs:label": "version"
+    },
+    {
+      "@id": "attributes",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The list of attributes and their URI"
+      "rdfs:label": "attributes"
+    }
+  ]
+}
