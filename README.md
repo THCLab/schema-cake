@@ -13,7 +13,7 @@ functionality.
 The idea is that schema base and overlays would be identify by decentralize
 identifier. It could be [DID](https://w3c-ccg.github.io/did-spec/) if final
 version would allow for referencing any kind of content. Or we would find
-another solution like DRI (Decenralize Resource Identifier) which would have
+another solution like DRI (Decentralize Resource Identifier) which would have
 much wider definition then current DID.
 
 The main reason behind having decentralize identifier is to attach few
